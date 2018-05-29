@@ -1,0 +1,15 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 30 #定义调用服务续约任务的时间间隔
+    lease-expiration-duration-in-seconds: 90 # 定义服务时效的时间
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
